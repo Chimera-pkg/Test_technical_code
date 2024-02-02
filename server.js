@@ -5,11 +5,12 @@ const port = 5000;
 app.use(express.static('public'));
 app.use(express.json());
 
+
 app.post('/generate-triangle', (req, res) => {
     const inputNumber = parseInt(req.body.inputNumber);
 
     let result = '';
-    for (let i = 1; 1 <= inputNumber; i++){
+    for (let i = 1; i <= inputNumber; i++){
         result += '0'.repeat(inputNumber - i) + i.toString().repeat(i)
     } 
     res.json({result : result})
@@ -20,7 +21,7 @@ app.post('/generate-ganjil', (req, res) => {
     const inputNumber = parseInt(req.body.inputNumber);
     
     let result = '';
-    for (let i = 0; 1 <= inputNumber; i++) {
+    for (let i = 1; i <= inputNumber; i++) {
         if (i % 2 !== 0) {
             result += i + '\n';
         }
